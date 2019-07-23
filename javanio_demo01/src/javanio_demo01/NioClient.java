@@ -66,7 +66,7 @@ public class NioClient {
 				ByteBuffer outBuffer = ByteBuffer.wrap(request.getBytes());
 				
 				channel.write(outBuffer); //发送到服务器端
-//				outBuffer.clear();
+				outBuffer.clear();
 				System.out.println("客户端建立链接后生成的通道： "+ channel);
 
 			}
@@ -88,7 +88,7 @@ public class NioClient {
 		channel.read(buffer);
 		String respose = new String(buffer.array()).trim();
 		
-//		buffer.clear();
+		buffer.clear();
 		
 		System.out.println("服务端响应：" + respose);
 		String nextRequest = clientInput.readLine();
@@ -98,7 +98,7 @@ public class NioClient {
 		
 		channel.write(outBuffer);   // 将请求发送到服务端
 		
-//		outBuffer.clear();
+		outBuffer.clear();
 		
 		
 		System.out.println("客户端发送数据时生成的通道： "+ channel);

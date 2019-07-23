@@ -79,7 +79,7 @@ public class NioServer {
 		String request = new String(buffer.array()).trim();
 		System.out.println("客户端请求：" + request );
 		
-//		buffer.clear();
+		buffer.clear();
 		
 		//触发客户端的 read事件
 		ByteBuffer outBuffer = ByteBuffer.wrap("请求收到".getBytes());
@@ -87,7 +87,7 @@ public class NioServer {
 		
 		channel.write(outBuffer);
 		
-//		outBuffer.clear();
+		outBuffer.clear();
 		
 	}
 	
